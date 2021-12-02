@@ -1,0 +1,188 @@
+body,
+html {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  background: lightseagreen;
+}
+
+a {
+  text-decoration: none;
+}
+ul a:hover {
+  color: #fff;
+}
+
+section a:hover {
+  background: none;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+}
+
+h3 {
+  margin-top: 0;
+}
+/* -----------Настройка контейнера----------- */
+p {
+  margin: 0;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 80%;
+  max-height: 100%;
+}
+/* ------------------------------------------------------------------------------ */
+/*-------------[<-СТАТЬИ+НАВИГАЦИЯ->]-------------*/
+main {
+  width: 100%;
+  height: 85%;
+  display: flex;
+  justify-content: space-between;
+  overflow: auto;
+  background: #b4cde6;
+}
+/* ------------------------------------------------------------------------------ */
+/* -------------[<-Статьи]------------- */
+/*-------------[Текст+кнопка] */
+
+article {
+  border-right: 3px solid white;
+  padding: 0 2%;
+  width: 74%;
+  box-sizing: border-box;
+  counter-reset: numb;
+}
+/*-------------[Текст */
+section {
+  /* outline: 2px solid rgb(0, 17, 255); */
+  margin-top: 2%;
+  padding: 1% 0 3% 1%;
+  min-width: 100%;
+  /* height: 20%; */
+  background-color: #9cbfe2;
+  border-radius: 20px;
+  position: relative;
+  box-sizing: border-box;
+  font-size: 2vw;
+  font-size: 2vh;
+}
+
+.counter::before {
+  counter-increment: numb;
+  content: "Статья " counter(numb) ". ";
+}
+
+/* ------------------------- */
+/*-------------кнопка] */
+section a {
+  text-align: center;
+  width: 10%;
+  height: 10%;
+  background: red;
+  letter-spacing: 1px;
+  padding: 10px 5px;
+
+  color: white;
+  /* border: 2px solid red; */
+  border-radius: 5px;
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+}
+/* ------------------------------------------------------------------------------ */
+/* -------------[Навигация->]------------- */
+.rightSide {
+  width: 20%;
+  /* background: #b4cde6; */
+  margin: 0 5px;
+}
+
+.rightSide ul {
+  text-align: center;
+  /* display: inline-block; */
+}
+
+.rightSide > ul > li {
+  max-width: 60%;
+  padding: 20px 0;
+  border: 2px solid white;
+  border-radius: 10px;
+  margin: 10px auto;
+  font-size: 2vh;
+  background-color: #a1c3e6;
+}
+
+.rightSide a {
+  color: rgb(0, 0, 0);
+  padding: 5% 22%;
+}
+/* ------------------------------------------------------------------------------ */
+/* -------------[Низ]------------- */
+footer {
+  box-sizing: border-box;
+  width: 80%;
+  height: 15%;
+  background: #b4cde6;
+  border-top: 5px solid blue;
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+  position: absolute;
+}
+
+footer li {
+  border: 2px solid white;
+  border-radius: 2px;
+  background-color: #a1c3e6;
+  margin-bottom: 2px;
+}
+
+footer ul {
+  text-align: center;
+  font-size: 12px;
+}
+
+footer p {
+  text-align: center;
+  /* margin-top: -10%; */
+  font-weight: bold;
+}
+
+footer a {
+  color: black;
+}
+
+/* 
+говно на костылях
+*/
+@media print {
+  menu {
+    background-color: green;
+  }
+
+  footer,
+  aside,
+  a {
+    display: none;
+  }
+
+  article {
+    width: 100%;
+    background: green;
+  }
+  section {
+    background-color: green;
+  }
+  body {
+    background: white;
+  }
+  main article section:nth-child(3) {
+    page-break-after: always;
+  }
+}
